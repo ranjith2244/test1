@@ -10,7 +10,8 @@ stages:
     displayName: 'Build job'
     
     pool:
-      vmImage: 'windows-latest'
+      name: 'Default'
+      vmImage: 'agentvm'
     
     variables:
       solution: '**/*.sln'
