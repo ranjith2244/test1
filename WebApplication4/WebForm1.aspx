@@ -66,7 +66,7 @@
 
  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT * FROM [dev]"></asp:SqlDataSource>
      <tr>
-     <td class="auto-style2">update the code</td>
+     <td class="auto-style2">The New Version Commit</td>
      </tr>
  </form>
 </body>
