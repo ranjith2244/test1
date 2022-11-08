@@ -16,7 +16,7 @@ stages:
       solution: '**/*.sln'
       buildPlatform: 'Any CPU'
       buildConfiguration: 'Release'
-      currentDate: $[ format('{0:yyyy}.{0:MM}.{0:dd}.{0:hh}', pipeline.startTime) ]
+      currentDate: $[ format('{0:yyyy}.{0:MM}.{0:dd}.{0:HH}', pipeline.startTime) ]
       path : 'C:\test\'
     
     steps:
