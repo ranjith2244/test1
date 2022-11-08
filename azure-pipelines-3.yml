@@ -16,6 +16,7 @@ stages:
       solution: '**/*.sln'
       buildPlatform: 'Any CPU'
       buildConfiguration: 'Release'
+      mydate: $(Get-Date -Format yyyyMMdd)
     
     steps:
     - task: NuGetToolInstaller@1
@@ -39,5 +40,5 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
+        ArtifactName: $(mydate)
         publishLocation: 'Container'
