@@ -16,7 +16,7 @@ stages:
       solution: '**/*.sln'
       buildPlatform: 'Any CPU'
       buildConfiguration: 'Release'
-      mydate: $(Get-Date -Format yyyyMMdd)
+      currentDate: $[ format('{0:yyyy}.{0:MM}.{0:dd}', pipeline.startTime) ]
       path : 'C:\test\'
     
     steps:
@@ -43,5 +43,5 @@ stages:
       inputs:
         SourceFolder: '$(Build.ArtifactStagingDirectory)'
         Contents: '**'
-        TargetFolder: '$(path)'
+        TargetFolder: '$(path)\$(currentDate)'
 
