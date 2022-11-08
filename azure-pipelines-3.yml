@@ -37,7 +37,11 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: $(mydate)
-        publishLocation: FilePath
-        targetPath: $(path)
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.ArtifactStagingDirectory)'
+        Contents: '**'
+        TargetFolder: '$(path)'
 
