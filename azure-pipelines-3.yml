@@ -19,6 +19,8 @@ stages:
       currentDate: $[ format('{0:yyyy}.{0:MM}.{0:dd}.{0:HH}', pipeline.startTime) ]
       path : '\\SELFAGENT\buildcode'
       path2 : '\\SELFAGENT\gitcopy'
+
+
     
     steps:
     - task: NuGetToolInstaller@1
@@ -26,6 +28,11 @@ stages:
     - task: NuGetCommand@2
       inputs:
         restoreSolution: '$(solution)'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: 'WebApplication4/obj/Debug/'
+        Contents: '**'
+        TargetFolder: '\\SELFAGENT\gitcopy'
     
     - task: VSBuild@1
       inputs:
