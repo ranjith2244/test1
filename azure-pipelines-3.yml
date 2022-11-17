@@ -10,14 +10,15 @@ stages:
     displayName: 'Build job'
     
     pool:
-      name: Test
+      name: Test2
     
     variables:
       solution: '**/*.sln'
       buildPlatform: 'Any CPU'
       buildConfiguration: 'Release'
       currentDate: $[ format('{0:yyyy}.{0:MM}.{0:dd}.{0:HH}', pipeline.startTime) ]
-      path : '\\dep1\build'
+      path : '\\SELFAGENT\buildcode'
+      path2 : '\\SELFAGENT\gitcopy'
     
     steps:
     - task: NuGetToolInstaller@1
