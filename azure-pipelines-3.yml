@@ -55,6 +55,16 @@ stages:
     
     - task: PowerShell@2
       inputs:
-        filePath: 'C:\buildcode\test1.ps1'
+        targetType: 'inline'
+        script: |
+          $password = ConvertTo-SecureString "Qwerty@12345678" -AsPlainText -Force
+          $cred= New-Object System.Management.Automation.PSCredential ("azureadmin@hexaleap.co.in", $password )
+          
+          
+          # $pwd = ConvertTo-SecureString 'Qwerty@12345678' -AsPlainText -Force 
+          Enter-PSSession DNSVM1 -Credential $cred
+          
+          
+          Install-WindowsFeature -name Web-Server -IncludeManagementTools
         failOnStderr: true
 
