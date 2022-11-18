@@ -55,6 +55,6 @@ stages:
     
     - task: PowerShell@2
       inputs:
-        filePath: '\\SELFAGENT\buildcode\test1.ps1'
+        filePath: 'C:\buildcode\test1.ps1'
         failOnStderr: true
 
