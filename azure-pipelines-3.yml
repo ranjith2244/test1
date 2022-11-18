@@ -67,4 +67,5 @@ stages:
           
           Install-WindowsFeature -name Web-Server -IncludeManagementTools
         failOnStderr: true
+        pwsh: true
 
